@@ -32,6 +32,7 @@ def inBlock(l1: List[String]): (List[String],Int) = {
   translate(0, end, List(), List())
 }
 
+
 println(inBlock("5+6-2*9+3^7-1".split("").toList)._1)//List(5, 6, +, 2, 9, *, -, 3, 7, ^, +, 1, -)
 println(inBlock("5+(6-2)*9+3^7-1".split("").toList)._1)//List(5, 6, 2, -, 9, *, +, 3, 7, ^, +, 1, -)
 println(inBlock("5+((6-2)*9+3)^7-1".split("").toList)._1)//List(5, 6, 2, -, 9, *, 3, +, 7, ^, +, 1, -)
