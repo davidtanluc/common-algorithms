@@ -1,5 +1,5 @@
 import scala.collection.mutable.ArrayBuffer
-
+// O(nlogn)
 def merge(l: List[Int], r: List[Int]): List[Int] = {
   var result = ArrayBuffer[Int]()
   var il = 0

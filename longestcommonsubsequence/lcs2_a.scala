@@ -10,6 +10,22 @@ object lcs2_a {
 
   def lcsDynamic(str1: String, str2: String): Int = {
     val DP = Array.ofDim[Int](str1.length + 1, str2.length + 1)
+    //print(DP.length) //10
+    //print(DP(0).length) //7
+    /*
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+
+     */
+
     var max = 0
 
     for(i<- 1 until DP.length){
@@ -23,6 +39,23 @@ object lcs2_a {
 
         max = max max DP(i)(j)
       }}
+         // for (row <- DP) {
+           // for (elem <- row) print(elem + " ")
+            //println()
+          //}
+          /*
+          0 0 0 0 0 0 0
+          0 1 1 1 1 1 1
+          0 1 1 1 1 1 1
+          0 1 1 1 1 1 1
+          0 1 1 2 2 2 2
+          0 1 1 2 2 2 2
+          0 1 1 2 2 3 3
+          0 1 1 2 2 3 3
+          0 1 1 2 2 3 3
+          0 1 1 2 2 3 4
+
+          */
     //#END
     max
 
