@@ -8,7 +8,7 @@ object lcs2_a {
     else lcs(str1, str2, len1 + 1, len2) max lcs(str1, str2, len1, len2 + 1)
   }
 
-  def lcsDynamic(str1: String, str2: String): Int = {
+  def lcsDynamic2(str1: String, str2: String): Int = {
     val DP = Array.ofDim[Int](str1.length + 1, str2.length + 1)
     //print(DP.length) //10
     //print(DP(0).length) //7
@@ -64,6 +64,6 @@ object lcs2_a {
   def main(args: Array[String]) {
     val str1: String = "ABCDGHLQR"
     val str2: String = "AEDPHR"
-    System.out.print(lcsDynamic(str1,str2)) //4
+    System.out.print(lcsDynamic2(str1,str2)) //4
   }
 }
