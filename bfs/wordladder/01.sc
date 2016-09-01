@@ -58,6 +58,7 @@ def BFS(start:Vertex,g:Graph):Map[Vertex,List[Vertex]]={
     else bfs0(newNeighbours,newNeighbours::visited)
   }
   bfs0(List(start),List(List(start)))
+  //List(List(cog), List(log, dog), List(lot, dot), List(hot), List(hit)))
 
   occ.toMap
 }
