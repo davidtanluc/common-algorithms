@@ -104,6 +104,7 @@ object dijkstra {
     //println(occ)//   Map(2 -> List(), 1 -> List(2), 3 -> List(0), 0 -> List(1, 2))
     //println(rev)//Map(2 -> List(1, 0), 1 -> List(0), 3 -> List(), 0 -> List(3))
     //println(cost.zipWithIndex)//Map((2,List()) -> 0, (1,List(2)) -> 1, (0,List(1, 5)) -> 3, (3,List(2)) -> 2)
+    //println(cost)//Map(2 -> List(), 1 -> List(2), 3 -> List(2), 0 -> List(1, 5))
     println(Dijkstra(occ, cost, h, k)) //3
 
 
