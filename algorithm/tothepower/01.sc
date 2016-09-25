@@ -31,17 +31,6 @@ x^n
   1/x^-n if n <0
   sqr(x.(x^(n-1)/2)) if n is odd
   sqr((x^(n)/2)) if n is odd
-
-  function expBySquaring(x, n) {
-    if (n == 1) {
-        return x;
-    } else if (n % 2 != 0) { // n is odd
-        return x * expBySquaring(x * x, (n - 1) / 2);
-
-    }
-    else { // n is even
-        return expBySquaring(x * x, n / 2);
-    }
 }
  */
 expBySquaring(2, 10)//1024
