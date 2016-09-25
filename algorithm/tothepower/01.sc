@@ -22,20 +22,23 @@ def recPowerTailRec(base: Int, exp: Int): Int = {
 
   loop(1, exp)
 }
-//https://en.wikipedia.org/wiki/Exponentiation_by_squaring
-///// exponential squaring /////
-/*
-x^n
 
-  1 if n =0
-  1/x^-n if n <0
-  sqr(x.(x^(n-1)/2)) if n is odd
-  sqr((x^(n)/2)) if n is odd
+/*
+
+https://en.wikipedia.org/wiki/Exponentiation_by_squaring
+
+base^exp;; 2^3 = 8
+
+  1 if exp =0
+  1/base^-exp if exp <0
+  base * (base * base)^(exp-1)/2 if exp is odd
+  base * base ^exp/2 if exp is even
 }
- */
+*/
+
 expBySquaring(2, 10)//1024
-expBySquaring(2, 3)
-expBySquaring(2, 0)
+expBySquaring(2, 3)//8
+expBySquaring(2, 0)//1
 def expBySquaring(base: Int, exp: Int): Long = {
 
   if (base == 0) return 0
