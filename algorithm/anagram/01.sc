@@ -1,3 +1,4 @@
+// Find which word/words is/are anagram of another in this list
 var C = Array("ate", "eat", "java", "apple", "jaav", "aet")
 
 
