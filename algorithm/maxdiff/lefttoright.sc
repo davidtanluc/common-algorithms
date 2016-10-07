@@ -21,11 +21,14 @@ def solution(A: Array[Int]): Int = {
   var anchor = A(0) // 7
   var max_diff = Int.MinValue //max diff
 
+  // difference left to right
   for (current <- A.tail) {
+
+
+    max_diff = max_diff max (current - anchor)
 
     anchor = anchor min current //anchor switch to new minimum
 
-    max_diff = max_diff max (current - anchor)
 
   }
   //
