@@ -26,13 +26,9 @@ http://www.programcreek.com/2014/06/leetcode-word-ladder-ii-java/
                      cog
 
  */
-
 import scala.collection.mutable
-
 type Word = String
-
 def anagramword(s: String) = s.toLowerCase.toList.groupBy(elem => elem).mapValues(elem => elem.length)
-
 def checkdiffbyOne(w1: Word, w2: Word): Boolean = {
   val left = anagramword(w1)
   val right = anagramword(w2)
@@ -47,7 +43,6 @@ def checkdiffbyOne(w1: Word, w2: Word): Boolean = {
   }
   if (count == 1) true else false
 }
-
 def makeDict(l: List[Vertex]) = {
   val occ = mutable.Map[Vertex, List[Vertex]]()
   for (left <- l; right <- l; if checkdiffbyOne(left, right)) {
@@ -57,7 +52,6 @@ def makeDict(l: List[Vertex]) = {
   }
   occ
 }
-
 val ll1 = List("hit", "hot", "dot", "dog", "lot", "log", "cog")
 val g1 = makeDict(ll1)
 //val g1 = Map(
@@ -72,23 +66,22 @@ type Vertex = String
 type Graph = Map[Vertex, List[Vertex]]
 
 def BFS(start: Vertex, g: Graph): Map[Vertex, List[Vertex]] = {
-
   val occ = mutable.Map[Vertex, List[Vertex]]()
   occ(start) = List()
 
   def bfs0(elems: List[Vertex], visited: List[List[Vertex]]): List[List[Vertex]] = {
 
-    def newNeighbours = (elems.flatMap(g(_)) filterNot visited.flatten.contains).distinct
+    val newNeighbours = (elems.flatMap(g(_)) filterNot visited.flatten.contains).distinct
 
-    for (el <- newNeighbours; el2 <- elems; if g1(el).contains(el2))
+    for (el <- newNeighbours; el2 <- elems; if g(el).contains(el2))
       if (occ.isDefinedAt(el)) occ(el) = el2 :: occ(el) else occ(el) = List(el2)
 
     ////
     if (newNeighbours.isEmpty) visited
     else bfs0(newNeighbours, newNeighbours :: visited)
   }
-  bfs0(List(start), List(List(start)))
-  //List(List(cog), List(log, dog), List(lot, dot), List(hot), List(hit)))
+  println("BFS",bfs0(List(start), List(List(start))))
+  //(BFS,List(List(cog), List(log, dog), List(lot, dot), List(hot), List(hit)))
 
   occ.toMap
 }
@@ -101,7 +94,6 @@ def BFS(start: Vertex, g: Graph): Map[Vertex, List[Vertex]] = {
  hit -> List(),
  dot -> List(hot),
  lot -> List(hot))
-
  */
 val start = "hit"
 val end = "cog"
