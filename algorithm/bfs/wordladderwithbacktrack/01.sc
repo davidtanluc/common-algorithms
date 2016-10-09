@@ -1,6 +1,34 @@
+/*
+
+LeetCode – Word Ladder II (Java)
+
+Given two words (start and end), and a dictionary, find all shortest transformation sequence(s) from start to end, such that: 1) Only one letter can be changed at a time, 2) Each intermediate word must exist in the dictionary.
+
+For example, given: start = "hit", end = "cog", and dict = ["hot","dot","dog","lot","log"], return:
+
+  [
+    ["hit","hot","dot","dog","cog"],
+    ["hit","hot","lot","log","cog"]
+  ]
+
+
+http://www.programcreek.com/2014/06/leetcode-word-ladder-ii-java/
+
+
+                     hit
+                      |
+                     hot
+                /          \
+              dot          lot
+               |            |
+              dog          log
+                \           /
+                     cog
+
+ */
+
 import scala.collection.mutable
 
-//http://www.programcreek.com/2014/06/leetcode-word-ladder-ii-java/
 type Word = String
 
 def anagramword(s: String) = s.toLowerCase.toList.groupBy(elem => elem).mapValues(elem => elem.length)
@@ -78,6 +106,7 @@ def BFS(start: Vertex, g: Graph): Map[Vertex, List[Vertex]] = {
 val start = "hit"
 val end = "cog"
 val occ1 = BFS(start, g1.toMap)
+
 def backTrack(start: Word) = {
   val result = new scala.collection.mutable.MutableList[List[Vertex]]()
 
