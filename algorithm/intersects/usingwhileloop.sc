@@ -3,7 +3,7 @@ def intersects(A: Array[Int], B: Array[Int]): List[Int] = {
   val nums1 = A.sorted
   val nums2 = B.sorted
 
-  def loop(p1: Int, p2: Int, result: List[Int]): List[Int] = {
+  def whileloop(p1: Int, p2: Int, result: List[Int]): List[Int] = {
 
     if (p1 < nums1.length && p2 < nums2.length)
 
@@ -18,7 +18,7 @@ def intersects(A: Array[Int], B: Array[Int]): List[Int] = {
 
     else result
   }
-  loop(0, 0, List())
+  whileloop(0, 0, List())
 
 
 }
