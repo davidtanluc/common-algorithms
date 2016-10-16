@@ -9,11 +9,11 @@ def intersects(A: Array[Int], B: Array[Int]): List[Int] = {
 
       (nums1(p1), nums2(p2)) match {
 
-        case x if x._1 < x._2 => loop(p1 + 1, p2, result) // if nums1 smaller
+        case x if x._1 < x._2 => whileloop(p1 + 1, p2, result) // if nums1 smaller
 
-        case y if y._1 > y._2 => loop(p1, p2 + 1, result) // if nums1 greater
+        case y if y._1 > y._2 => whileloop(p1, p2 + 1, result) // if nums1 greater
 
-        case _ => loop(p1 + 1, p2 + 1, result :+ nums1(p1)) // equals
+        case _ => whileloop(p1 + 1, p2 + 1, result :+ nums1(p1)) // equals
       }
 
     else result
