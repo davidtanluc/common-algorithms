@@ -3,7 +3,8 @@
 Task description
 In this problem we consider only strings consisting of lower-case English letters (a−z).
 
-A string is a palindrome if it reads exactly the same from left to right as it does from right to left. For example, these strings are palindromes:
+A string is a palindrome if it reads exactly the same from left to right as it does from right to left.
+For example, these strings are palindromes:
 
 aza
 abba
@@ -13,7 +14,9 @@ These strings are not palindromes:
 zaza
 abcd
 abacada
-Given a string S of length N, a slice of S is a substring of S specified by a pair of integers (p, q), such that 0 ≤ p < q < N. A slice (p, q) of string S is palindromic if the string consisting of letters S[p], S[p+1], ..., S[q] is a palindrome. For example, in a string S = abbacada:
+Given a string S of length N, a slice of S is a substring of S specified by a pair of integers (p, q),
+such that 0 ≤ p < q < N. A slice (p, q) of string S is palindromic if the string consisting of
+letters S[p], S[p+1], ..., S[q] is a palindrome. For example, in a string S = abbacada:
 
 slice (0, 3) is palindromic because abba is a palindrome,
 slice (6, 7) is not palindromic because da is not a palindrome,
@@ -22,9 +25,11 @@ slice (1, 2) is palindromic because bb is a palindrome.
 Write a function
 
 object Solution { def solution(s: String): Int }
-that, given a string S of length N letters, returns the number of palindromic slices of S. The function should return −1 if this number is greater than 100,000,000.
+that, given a string S of length N letters, returns the number of palindromic slices of S.
+The function should return −1 if this number is greater than 100,000,000.
 
-For example, for string S = baababa the function should return 6, because exactly six of its slices are palindromic; namely: (0, 3), (1, 2), (2, 4), (2, 6), (3, 5), (4, 6).
+For example, for string S = baababa the function should return 6, because exactly six of its slices
+are palindromic; namely: (0, 3), (1, 2), (2, 4), (2, 6), (3, 5), (4, 6).
 
 Assume that:
 
