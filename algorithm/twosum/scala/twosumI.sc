@@ -10,6 +10,7 @@ var B = Array(5, 3, 1, 2, 5, 6, 2)
 var t = 9
 solution(A, t) //(4,5)
 solution(B, t) //(6,3)
+
 def solution(A: Array[Int], target: Int): (Int, Int) = {
   val occ = mutable.Map[Int, Int]()
 
