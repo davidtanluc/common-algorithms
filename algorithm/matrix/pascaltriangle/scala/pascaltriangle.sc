@@ -31,11 +31,12 @@ def printPascal2(n: Int) = {
     println(pascal2(row))
   }
 }
-def pascal1(c: Int, r: Int): Int = (c, r) match {
-  case (0, _) => 1
-  case x if c == r => 1
-  case _ => pascal1(c - 1, r - 1) + pascal1(c, r - 1)
+def pascal1(row: Int, col: Int): Int = (row, col) match {
+  case (_, 0) => 1
+  case x if col == row => 1
+  case _ => pascal1(row - 1, col) + pascal1(row - 1, col - 1)
 }
+///////////////
 printPascal(5)
 /*
 (row:,0)1
@@ -47,9 +48,10 @@ printPascal(5)
  */
 def printPascal(n: Int) = {
   for (row <- 0 to n) {
+    // height
     print("row:", row)
-    for (col <- 0 to row)
-      print(pascal1(col, row) + " ")
+    for (col <- 0 to row) // width
+      print(pascal1(row, col) + " ")
     println()
   }
 }
