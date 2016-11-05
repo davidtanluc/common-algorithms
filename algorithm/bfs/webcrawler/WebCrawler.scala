@@ -18,11 +18,14 @@ object WebCrawler {
     while (q.nonEmpty) {
       val u = q.dequeue()
 
-      for (v <- adj(u); if dist(v) == Int.MaxValue) {
+      for (v <- adj(u)
+           if dist(v) == Int.MaxValue) {
+
         q.enqueue(v)
         dist(v) = dist(u) + 1
       }
     }
+
     if (dist(t) == Int.MaxValue) -1 else dist(t)
   }
 
@@ -56,6 +59,11 @@ object WebCrawler {
 }
 
 /*
+
+
+                 4   3
+                 | / |
+                 1-- 2
 4 4
 1 2
 4 1
@@ -65,6 +73,10 @@ object WebCrawler {
 
 Output
 2
+
+Explanation : There is a unique shortest path between vertices
+2 and 4 in the graph.
+
 
 By hand
  0 -> 1
@@ -84,4 +96,6 @@ By hand
   3 ->List(0)
 
 from 1 to 3 it is 2 paths
+
+
  */
