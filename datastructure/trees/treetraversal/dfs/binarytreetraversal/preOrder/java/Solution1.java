@@ -17,6 +17,7 @@ class TreeNode {
 }
 
 public class Solution1 {
+    ArrayList<Integer> resultRecursive = new ArrayList<>();
 
     public ArrayList<Integer> preorderTraversal(TreeNode root) {
 
@@ -43,6 +44,18 @@ public class Solution1 {
         return returnList;
     }
 
+    public void preOrderRecursive(TreeNode root) {
+        if (root == null) return;
+
+        resultRecursive.add(root.val);
+
+        preOrderRecursive(root.left);
+
+        preOrderRecursive(root.right);
+
+
+    }
+
     public void printArrayList(ArrayList<Integer> A) {
         for (Integer el : A) {
             System.out.print(el + " ");
@@ -64,8 +77,11 @@ public class Solution1 {
         root.right.left.right = new TreeNode(9);
 
         Solution1 sol = new Solution1();
-
         sol.printArrayList(sol.preorderTraversal(root));//1 2 4 7 5 3 6 8 9
+
+        //////
+        sol.preOrderRecursive(root);
+        sol.printArrayList(sol.resultRecursive);//1 2 4 7 5 3 6 8 9
 
 
     }
