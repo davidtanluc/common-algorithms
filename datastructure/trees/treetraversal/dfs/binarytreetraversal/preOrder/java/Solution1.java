@@ -29,15 +29,15 @@ public class Solution1 {
 
         while (!stack.empty()) {
 
-            TreeNode n = stack.pop();
-            returnList.add(n.val);
+            TreeNode top = stack.pop();
+            returnList.add(top.val);
 
-            if (n.right != null) {
-                stack.push(n.right);
+            if (top.right != null) {
+                stack.push(top.right);
             }
 
-            if (n.left != null) {
-                stack.push(n.left);
+            if (top.left != null) {
+                stack.push(top.left);
             }
         }
 
@@ -45,6 +45,7 @@ public class Solution1 {
     }
 
     public void preOrderRecursive(TreeNode root) {
+
         if (root == null) return;
 
         resultRecursive.add(root.val);
@@ -52,7 +53,6 @@ public class Solution1 {
         preOrderRecursive(root.left);
 
         preOrderRecursive(root.right);
-
 
     }
 

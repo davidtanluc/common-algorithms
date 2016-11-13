@@ -92,8 +92,11 @@ public class Solution1 {
 
     public void inOrderRecursive(TreeNode root) {
         if (root == null) return;
+
         inOrderRecursive(root.left);
+
         resultRecursive.add(root.val);
+
         inOrderRecursive(root.right);
 
 
