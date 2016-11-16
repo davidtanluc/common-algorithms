@@ -22,9 +22,7 @@ public class Solution {
 
     public TreeNode sortedArrayToBST(int[] num) {
 
-        if (num.length == 0)
-
-            return null;
+        if (num.length == 0) return null;
 
         return sortedArrayToBST(num, 0, num.length - 1);
 
@@ -32,9 +30,7 @@ public class Solution {
 
     public TreeNode sortedArrayToBST(int[] num, int start, int end) {
 
-        if (start > end)
-
-            return null;
+        if (start > end) return null;
 
         int mid = (start + end) / 2;
 
@@ -57,11 +53,29 @@ public class Solution {
     }
 
 
+    public void postOrder(TreeNode root) {
+        if(root !=  null) {
+            postOrder(root.left);
+            //Visit the node by Printing the node data
+            postOrder(root.right);
+            System.out.printf("%d ",root.val);
+
+        }
+    }
+
     public static void main(String[] args){
 
         Solution sol = new Solution();
         int[] A = {1,2,3,4,5};
         TreeNode root = sol.sortedArrayToBST(A);
-        sol.inOrder(root);//1 2 3 4 5
+        //sol.inOrder(root);//1 2 3 4 5
+        sol.postOrder(root);//2 1 5 4 3
     }
 }
+/*
+                    3
+                  /    \
+                1       5
+                 \        \
+                  2        4
+ */
