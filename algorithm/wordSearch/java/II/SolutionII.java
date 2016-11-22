@@ -132,14 +132,9 @@ class Trie {
 
         for (char c : word.toCharArray()) {
 
-            if (node.children[c - 'a'] == null) {
-
-                node.children[c - 'a'] = new TrieNode();
-
-            }
+            if (node.children[c - 'a'] == null) node.children[c - 'a'] = new TrieNode();
 
             node = node.children[c - 'a'];
-
         }
 
         node.item = word;
@@ -152,23 +147,13 @@ class Trie {
 
         for (char c : word.toCharArray()) {
 
-            if (node.children[c - 'a'] == null)
-
-                return false;
+            if (node.children[c - 'a'] == null) return false;
 
             node = node.children[c - 'a'];
 
         }
 
-        if (node.item.equals(word)) {
-
-            return true;
-
-        } else {
-
-            return false;
-
-        }
+        return node.item.equals(word);
 
     }
 
@@ -178,9 +163,7 @@ class Trie {
 
         for (char c : prefix.toCharArray()) {
 
-            if (node.children[c - 'a'] == null)
-
-                return false;
+            if (node.children[c - 'a'] == null) return false;
 
             node = node.children[c - 'a'];
 
